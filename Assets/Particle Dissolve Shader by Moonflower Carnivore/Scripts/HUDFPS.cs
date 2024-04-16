@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine
  
 public class HUDFPS : MonoBehaviour 
 {
@@ -52,7 +53,7 @@ void Update()
 		if(fps < 10)
 			GetComponent<GUIText>().material.color = Color.red;
 		else
-			GetComponent<GUIText>().material.color = Color.green;
+			GetComponent<UI.Text>().material.color = Color.green;
 	//	DebugConsole.Log(format,level);
         timeleft = updateInterval;
         accum = 0.0F;
