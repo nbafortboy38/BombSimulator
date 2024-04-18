@@ -981,6 +981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750660558}
+  - component: {fileID: 750660559}
   m_Layer: 0
   m_Name: ProjectileSpawn
   m_TagString: Untagged
@@ -1003,6 +1004,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &750660559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750660556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86225950168d11a4e8444437a489de00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: []
+  projectileSpawn: {fileID: 750660556}
+  projectileSelector: {fileID: 0}
+  start: {fileID: 567621374}
 --- !u!1 &955707578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1786,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 750660559}
+        m_TargetAssemblyTypeName: ProjectileSpawn, Assembly-CSharp
+        m_MethodName: projectilePick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1355889547
 MonoBehaviour:
@@ -2200,7 +2229,6 @@ GameObject:
   - component: {fileID: 1620813592}
   - component: {fileID: 1620813591}
   - component: {fileID: 1620813590}
-  - component: {fileID: 1620813594}
   - component: {fileID: 1620813595}
   m_Layer: 0
   m_Name: Cube
@@ -2295,22 +2323,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1620813594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620813589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ebd01e048f53e4aba55af849cf09f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerForce: 0.5
-  _explosionRadius: 5
-  _explosionForce: 500
-  _particles: {fileID: 0}
 --- !u!54 &1620813595
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ public class ProjectileSpawn : MonoBehaviour
 {
     [SerializeField] GameObject[] projectilePrefab;
     [SerializeField] GameObject projectileSpawn;
-    [SerializeField] Dropdown projectileSelector;
     [SerializeField] Button start;
     int projectileChosen;
 
