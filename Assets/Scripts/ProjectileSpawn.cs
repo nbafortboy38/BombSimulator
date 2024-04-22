@@ -9,20 +9,33 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using TMPro;
+using System.Threading.Tasks;
 
 public class ProjectileSpawn : MonoBehaviour
 {
-
-    [SerializeField] TMP_Dropdown projectileDropdown;
+   
+    [SerializeField] UnityEngine.UI.Button atomButton;
+    [SerializeField] UnityEngine.UI.Button hydrogenButton;
 
     // Start is called before the first frame update
-  
+
     // Update is called once per frame
     void Update()
     {
         
     }
 
+    void Start()
+    {
+        UnityEngine.UI.Button projectileSelector = GetComponent<UnityEngine.UI.Button>();
+        projectileSelector.onClick.AddListener(TaskOnClick);
 
+    }
+
+    void TaskOnClick()
+    {
    
+    }
+
+
 }
