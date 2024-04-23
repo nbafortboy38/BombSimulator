@@ -154,9 +154,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1037968561}
-  - {fileID: 1627026620}
-  - {fileID: 653744355}
   - {fileID: 955707579}
+  - {fileID: 2028507047}
   m_Father: {fileID: 2136823152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -471,6 +470,7 @@ GameObject:
   - component: {fileID: 653744358}
   - component: {fileID: 653744357}
   - component: {fileID: 653744356}
+  - component: {fileID: 653744359}
   m_Layer: 5
   m_Name: Hydrogren Bomb
   m_TagString: Untagged
@@ -491,7 +491,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1346515322}
-  m_Father: {fileID: 160602537}
+  m_Father: {fileID: 2028507047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -580,6 +580,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653744354}
   m_CullTransparentMesh: 1
+--- !u!114 &653744359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653744354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a962f6985025dca499db4dd26e71558c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atomBomb: {fileID: 1627026621}
+  hydrogrenBomb: {fileID: 653744356}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +697,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750660558}
-  - component: {fileID: 750660559}
   m_Layer: 0
   m_Name: ProjectileSpawn
   m_TagString: Untagged
@@ -706,20 +719,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &750660559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750660556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86225950168d11a4e8444437a489de00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atomButton: {fileID: 0}
-  hydrogenButton: {fileID: 0}
 --- !u!1 &955707578
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,6 +987,7 @@ GameObject:
   - component: {fileID: 1037968564}
   - component: {fileID: 1037968563}
   - component: {fileID: 1037968562}
+  - component: {fileID: 1037968565}
   m_Layer: 5
   m_Name: FakeDropdown
   m_TagString: Untagged
@@ -1010,9 +1010,9 @@ RectTransform:
   - {fileID: 569526309}
   m_Father: {fileID: 160602537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.1, y: 240}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 68.05, y: -65}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1037968562
@@ -1058,7 +1058,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1037968563}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037968565}
+        m_TargetAssemblyTypeName: ProjectilePick, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1037968563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,6 +1109,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037968560}
   m_CullTransparentMesh: 1
+--- !u!114 &1037968565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037968560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dd728c204a3944fa847283db37a808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1279110127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +1908,7 @@ GameObject:
   - component: {fileID: 1627026623}
   - component: {fileID: 1627026622}
   - component: {fileID: 1627026621}
+  - component: {fileID: 1627026624}
   m_Layer: 5
   m_Name: AtomBomb
   m_TagString: Untagged
@@ -1898,13 +1923,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627026619}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1298540157}
-  m_Father: {fileID: 160602537}
+  m_Father: {fileID: 2028507047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1993,6 +2018,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627026619}
   m_CullTransparentMesh: 1
+--- !u!114 &1627026624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627026619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a962f6985025dca499db4dd26e71558c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atomBomb: {fileID: 1627026621}
+  hydrogrenBomb: {fileID: 653744356}
 --- !u!1 &1772422266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,6 +2100,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2028507046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028507047}
+  m_Layer: 5
+  m_Name: ButtonManager
+  m_TagString: ButtonManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2028507047
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028507046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1627026620}
+  - {fileID: 653744355}
+  m_Father: {fileID: 160602537}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 63, y: -310.3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2136823148
 GameObject:
   m_ObjectHideFlags: 0

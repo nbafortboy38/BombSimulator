@@ -11,31 +11,31 @@ using UnityEngine.UIElements;
 using TMPro;
 using System.Threading.Tasks;
 
-public class ProjectileSpawn : MonoBehaviour
+public class ProjectilePick : MonoBehaviour
 {
-   
-    [SerializeField] UnityEngine.UI.Button atomButton;
-    [SerializeField] UnityEngine.UI.Button hydrogenButton;
 
+    GameObject buttonManager;
+ 
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void Start()
     {
-        UnityEngine.UI.Button projectileSelector = GetComponent<UnityEngine.UI.Button>();
-        projectileSelector.onClick.AddListener(TaskOnClick);
+        buttonManager = GameObject.FindWithTag("ButtonManager");
+        buttonManager.SetActive(false);
 
     }
 
-    void TaskOnClick()
+    public void OnClick()
     {
-   
-    }
+        buttonManager.SetActive(true);
 
+
+    }
 
 }
