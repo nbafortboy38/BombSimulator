@@ -4,29 +4,45 @@ using UnityEngine;
 
 public class Explosive : MonoBehaviour
 {
-    [SerializeField] private float _triggerForce = 0.5f;
-    [SerializeField] private float _explosionRadius = 5;
-    [SerializeField] private float _explosionForce = 500;
-    [SerializeField] private GameObject _particles;
+    public float delay = 3f;
+    public float radius = 5f;
+    public float force = 700f;
+
+    public GameObject explosionEffect;
+
+    float countdown;
+    bool hasExploded = false;
 
     // Start is called before the first frame update
-    private void OnCollisionEnter(Collision collision)
+    void Start()
     {
-        if(collision.relativeVelocity.magnitude >= _triggerForce)
+        countdown = delay;
+    }
+    private void Update()
+    {
+        countdown -= Time.deltaTime;
+        if (countdown <= 0f && !hasExploded)
         {
-            var surroundingObjects = Physics.OverlapSphere(transform.position, _explosionRadius);
-
-            foreach(var obj in surroundingObjects)
-            {
-                var rb = obj.GetComponent<Rigidbody>();
-                if (rb == null) continue;
-
-                rb.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
-            }
-
-            Instantiate(_particles, transform.position, Quaternion.identity);
-
-            Destroy(gameObject);
+            Explode();
+            hasExploded = true;
         }
+    }
+
+    void Explode ()
+    {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        
+        foreach (Collider nearbyObject in colliders) 
+        {
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if (rb != null )
+            {
+                rb.AddExplosionForce(force, transform.position, radius);
+            }
+        }
+
+        Destroy(gameObject);
     }
 }
