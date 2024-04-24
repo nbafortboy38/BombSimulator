@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 567621376}
   - component: {fileID: 567621375}
   - component: {fileID: 567621374}
+  - component: {fileID: 567621378}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -263,7 +264,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 567621375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 567621378}
+        m_TargetAssemblyTypeName: ProjectileSpawn, Assembly-CSharp
+        m_MethodName: TaskOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &567621375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +322,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567621373}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -322,6 +335,24 @@ RectTransform:
   m_AnchoredPosition: {x: -80, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &567621378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567621373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691de3ff7fb5f3b4fb9485fc5663f210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpawn: {fileID: 750660556}
+  atomBombPrefab: {fileID: 8886232304511480905, guid: e938ca4b87cff0546ad74fec2c2b9781, type: 3}
+  hydrogenBombPrefab: {fileID: 906319846649886215, guid: 185b8e00e7404d643b2629d5010dd8f6, type: 3}
+  start: {fileID: 567621374}
+  buttonClicked: 0
+  uiButtonsScript: {fileID: 2028507048}
 --- !u!1 &569526308
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +501,6 @@ GameObject:
   - component: {fileID: 653744358}
   - component: {fileID: 653744357}
   - component: {fileID: 653744356}
-  - component: {fileID: 653744359}
   m_Layer: 5
   m_Name: Hydrogren Bomb
   m_TagString: Untagged
@@ -541,7 +571,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 653744357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2028507048}
+        m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
+        m_MethodName: HydrogenButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &653744357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,20 +622,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653744354}
   m_CullTransparentMesh: 1
---- !u!114 &653744359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653744354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a962f6985025dca499db4dd26e71558c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atomBomb: {fileID: 1627026621}
-  hydrogrenBomb: {fileID: 653744356}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750660558}
+  - component: {fileID: 750660559}
   m_Layer: 0
   m_Name: ProjectileSpawn
   m_TagString: Untagged
@@ -719,6 +748,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &750660559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750660556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafeb53e94a228f499f2d2a0bf8c298c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpawn: {fileID: 750660556}
+  atomBombPrefab: {fileID: 8886232304511480905, guid: e938ca4b87cff0546ad74fec2c2b9781, type: 3}
+  hydrogenBombPrefab: {fileID: 906319846649886215, guid: 185b8e00e7404d643b2629d5010dd8f6, type: 3}
+  buttonClicked: 0
+  startButton: {fileID: 567621374}
 --- !u!1 &955707578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1729,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509278458}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7ec88e6677a9a83429a4d2a6b81461b6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1695,7 +1741,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1509278460
@@ -1908,7 +1954,6 @@ GameObject:
   - component: {fileID: 1627026623}
   - component: {fileID: 1627026622}
   - component: {fileID: 1627026621}
-  - component: {fileID: 1627026624}
   m_Layer: 5
   m_Name: AtomBomb
   m_TagString: Untagged
@@ -1979,7 +2024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1627026622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2028507048}
+        m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
+        m_MethodName: AtomButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1627026622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2018,20 +2075,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627026619}
   m_CullTransparentMesh: 1
---- !u!114 &1627026624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627026619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a962f6985025dca499db4dd26e71558c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atomBomb: {fileID: 1627026621}
-  hydrogrenBomb: {fileID: 653744356}
 --- !u!1 &1772422266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,6 +2152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2028507047}
+  - component: {fileID: 2028507048}
   m_Layer: 5
   m_Name: ButtonManager
   m_TagString: ButtonManager
@@ -2137,6 +2181,21 @@ RectTransform:
   m_AnchoredPosition: {x: 63, y: -310.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2028507048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028507046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a962f6985025dca499db4dd26e71558c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atomBomb: {fileID: 1627026621}
+  hydrogrenBomb: {fileID: 653744356}
+  buttonClicked: 0
 --- !u!1 &2136823148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,8 +2291,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 160602537}
   - {fileID: 567621377}
+  - {fileID: 160602537}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2262,5 +2321,5 @@ SceneRoots:
   - {fileID: 1509278462}
   - {fileID: 2136823152}
   - {fileID: 1772422269}
-  - {fileID: 750660558}
   - {fileID: 1620813593}
+  - {fileID: 750660558}

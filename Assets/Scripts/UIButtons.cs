@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,7 @@ public class UIButtons : MonoBehaviour
 
     [SerializeField] UnityEngine.UI.Button atomBomb;
     [SerializeField] UnityEngine.UI.Button hydrogrenBomb;
-    bool atomButtonEnabled = false;
-    bool hydrogenButtonEnabled = false;
-
+    public int buttonClicked;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +26,17 @@ public class UIButtons : MonoBehaviour
     }
 
 
-    private void OnEnable()
+    public void AtomButton()
     {
-      
+        buttonClicked = 1;
+
     }
+
+    public void HydrogenButton()
+    {
+        buttonClicked = 2;
+    }
+
 }
 
 
