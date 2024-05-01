@@ -6,11 +6,16 @@ public class Destructible : MonoBehaviour
 {
 
     public GameObject destroyedVersion;
-
-    void OnMouseDown ()
+    public Vector3 offSet;
+    
+    
+    private void OnTriggerEnter(Collider other)
     {
-        Instantiate(destroyedVersion, transform.position, transform.rotation);
         Destroy(gameObject);
+        Debug.Log("hello");
+        Instantiate(destroyedVersion, transform.position+offSet, transform.rotation);
     }
+
+
 
 }
