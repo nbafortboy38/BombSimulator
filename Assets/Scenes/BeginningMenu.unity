@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776c8728605587f4487ad5a378572900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeCanvas: {fileID: 0}
   defaultDuration: 1
-  fadeCanvas: {fileID: 446440737}
 --- !u!1 &481688662
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,19 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnLoad:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 446440741}
-        m_TargetAssemblyTypeName: FadeCanvas, Assembly-CSharp
-        m_MethodName: StartFadeOut
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!4 &481688664
 Transform:
   m_ObjectHideFlags: 0
