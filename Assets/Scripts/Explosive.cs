@@ -41,6 +41,12 @@ public class Explosive : MonoBehaviour
             {
                 rb.AddExplosionForce(force, transform.position, radius);
             }
+
+            Destructible dest = nearbyObject.GetComponent<Destructible>();
+            if(dest != null )
+            {
+                dest.Destroy();
+            }
         }
 
         Destroy(gameObject);

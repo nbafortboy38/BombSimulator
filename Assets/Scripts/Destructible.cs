@@ -9,13 +9,12 @@ public class Destructible : MonoBehaviour
     public Vector3 offSet;
     
     
-    private void OnTriggerEnter(Collider other)
+    public void Destroy()
     {
-        Destroy(gameObject);
-        Debug.Log("hello");
         Instantiate(destroyedVersion, transform.position+offSet, transform.rotation);
+        Destroy(gameObject);
     }
-
+    
 
 
 }

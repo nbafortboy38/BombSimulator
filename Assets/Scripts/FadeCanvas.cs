@@ -47,7 +47,7 @@ public class FadeCanvas : MonoBehaviour
         StopAllCoroutines();
         CurrentRoutine = StartCoroutine(FadeOut(defaultDuration));
 
-       // GameObject.FindGameObjectWithTag("FadeCavas").SetActive(false);
+       //GameObject.FindGameObjectWithTag("FadeCavas").SetActive(false);
        
     }
     private IEnumerator FadeIn(float duration)
@@ -64,15 +64,21 @@ public class FadeCanvas : MonoBehaviour
 
     private IEnumerator FadeOut(float duration)
     {
+        
         float elapsedTime = 0.0f;
 
         while (alpha >= 0.0f)
-        {
+        { 
+            if (alpha == 0.0f)
+            {
+                GameObject.FindGameObjectWithTag("FadeCanvas").SetActive(false);
+            }
+
+            Debug.Log("running fade out");
             SetAlpha(1 - (elapsedTime / duration));
             elapsedTime += Time.deltaTime;
 
-            GameObject.FindGameObjectWithTag("FadeCanvas").SetActive(false);
-
+           
             yield return null;
         }
     }
