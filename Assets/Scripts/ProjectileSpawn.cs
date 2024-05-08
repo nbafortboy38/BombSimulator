@@ -17,6 +17,7 @@ public class ProjectileSpawn : MonoBehaviour
     [SerializeField] Button start;
     public int buttonClicked;
     [SerializeField] UIButtons uiButtonsScript;
+    public bool bombDropped = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,8 @@ public class ProjectileSpawn : MonoBehaviour
             Instantiate(hydrogenBombPrefab, projectileSpawn.transform.position, Quaternion.identity);
 
         }
+
+        bombDropped = true;
 
     }
 
