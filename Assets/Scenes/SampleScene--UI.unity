@@ -265,7 +265,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 567621378}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ProjectileSpawn, Assembly-CSharp
         m_MethodName: TaskOnClick
         m_Mode: 1
@@ -344,15 +344,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 567621373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 691de3ff7fb5f3b4fb9485fc5663f210, type: 3}
+  m_Script: {fileID: 11500000, guid: a701342bf7294264986b89c8704989a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawn: {fileID: 750660556}
-  atomBombPrefab: {fileID: 2833209447221392628, guid: 8ba09561b0a735c40938cd1bc9489e48, type: 3}
-  hydrogenBombPrefab: {fileID: 7499843768421683073, guid: da5fe7f2507eefd4f9b8fa41f0655f98, type: 3}
-  start: {fileID: 567621374}
+  atomBombPrefab: {fileID: 0}
+  hydrogenBombPrefab: {fileID: 0}
+  start: {fileID: 0}
   buttonClicked: 0
-  uiButtonsScript: {fileID: 2028507048}
+  uiButtonsScript: {fileID: 0}
 --- !u!1 &569526308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,9 +2055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a962f6985025dca499db4dd26e71558c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atomBomb: {fileID: 1627026621}
-  hydrogrenBomb: {fileID: 653744356}
-  buttonClicked: 0
 --- !u!1 &2136823148
 GameObject:
   m_ObjectHideFlags: 0
