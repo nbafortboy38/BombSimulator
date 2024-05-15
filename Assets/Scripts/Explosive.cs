@@ -7,7 +7,7 @@ public class Explosive : MonoBehaviour
     public float delay = 3f;
     public float radius = 5f;
     public float force = 700f;
-
+    public ParticleSystem part;
     public GameObject explosionEffect;
 
     float countdown;
@@ -17,12 +17,25 @@ public class Explosive : MonoBehaviour
     void Start()
     {
         countdown = delay;
+        part = GameObject.FindGameObjectWithTag("shockwave").GetComponent<ParticleSystem>();
     }
     private void Update()
     {
-        countdown -= Time.deltaTime;
+
+       
+     /*   countdown -= Time.deltaTime;
         if (countdown <= 0f && !hasExploded)
         {
+            Explode();
+            hasExploded = true;
+        }*/
+       
+    }
+
+    public void OnCollisionEnter(Collision otherObject)
+    {
+        if (otherObject.gameObject.CompareTag("Ground"))
+            {
             Explode();
             hasExploded = true;
         }
@@ -45,7 +58,7 @@ public class Explosive : MonoBehaviour
             Destructible dest = nearbyObject.GetComponent<Destructible>();
             if(dest != null )
             {
-                dest.Destroy();
+                dest.BreakBuildings();
             }
         }
 

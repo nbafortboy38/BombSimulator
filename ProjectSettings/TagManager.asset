@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ButtonManager
   - FadeCanvas
+  - shockwave
   layers:
   - Default
   - TransparentFX
